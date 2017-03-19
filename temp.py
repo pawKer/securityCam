@@ -19,8 +19,9 @@ while(1):
   target.write("""
   <html>
   <head>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> 
- </head>
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> 
+   <meta http-equiv="refresh" content="5" >
+  </head>
   <body>
 <div class="row2">
 <div class="col-md-12">
@@ -37,7 +38,7 @@ while(1):
     <hr style="border-width: 1px 0; border-color: grey">
     <center>
     <h1 style="color:red;align:center">Temperature is %s °C</h1>
-   <form method="get" action="http://192.168.0.45/cam/"> <button type="submit" class="btn btn-success">Back</button></form>
+   <form method="get" action="http://belgrave.hopto.org/cam/temp.html"> <button type="submit" class="btn btn-success">Refresh</button></form>
     <hr style="border-width: 1px 0; border-color: grey">
   </div>
 </div>
@@ -49,6 +50,6 @@ while(1):
   """ % temperature)
   target.write("\n")
   target.close()
-  time.sleep(1)
+  time.sleep(5)
 
  

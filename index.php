@@ -83,7 +83,7 @@ session_start();
 		echo "<h3 style='color:red'>You must be logged in to view the stream</h3>";
 	}
 	?>
-    <p></p>
+    <p><div id="rt-0e6fb924b593606fb0dd2c223b00cccc"></div><script src="https://www.rumbletalk.com/client/?4:-e4iDj&2"></script></p>
       
       <p><iframe src="temp.html" width="640" height="500" scrolling="no" marginheight="500" marginwidth="100"></iframe></p>
       <hr>
@@ -91,12 +91,41 @@ session_start();
       <p></p>
     </div>
     <div class="col-sm-2 sidenav">
-      <div class="well">
-        <p>Te-ai saturat sa ai penisul mic? Si Danut...</p>
+     <h3>Sponsored ads</h3> 
+     <div class="well">
+        <p>Tired of walking to school everyday? Stop being poor...</p>
       </div>
       <div class="well">
-        <p>Te-ai saturat de kilogramele in plus? Fa 5 ani de sala intr-o vara!</p>
+        <p>Need a new phone? Me too...</p>
       </div>
+      <div class="well">
+	<h3> Users watching : </h3>
+	<?php 
+	require_once('config.inc.php');
+
+          // Connect to the database
+          $mysqli = new mysqli($database_host, $database_user, $database_pass);
+
+          // Check for errors before doing anything else
+          if($mysqli -> connect_error)
+          {
+              die('Connect Error ('.$mysqli -> connect_errno.') '.$mysqli -> connect_error);
+          }
+
+	    $mysqli->query("USE cam_users");
+            //Add a new entry to the database if not already in the database
+            $shots = $mysqli->query("SELECT *  FROM users");
+	    foreach( $shots as $row)
+            {
+ 		$name = $row['name'];
+              if ($row['logged_in'] == '1')
+              {
+                echo "<p>$name</p>";
+              }
+            }
+
+	?>
+	</div>
     </div>
   </div>
 </div>

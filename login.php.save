@@ -113,8 +113,7 @@ echo $study_Level;
 <?php
 
         //Do not forget that each variable is of type string
-        if ($study_Level != '02' && $category != 'student'
-            && $deparment != 'School of Computer Science')
+        if ($category != 'student')
         {
           echo "Hello second year CS student";
         }
